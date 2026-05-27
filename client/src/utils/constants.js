@@ -17,8 +17,8 @@ export const FLAVORS = [
 ];
 
 export const PRODUCT_IMAGES = {
-  'W180': 'https://images.unsplash.com/photo-1590005354167-6da97870c757?w=400&h=400&fit=crop',
-  'W220': 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=400&fit=crop',
+  'W180': '/images/w180.jpg',
+  'W220': '/images/w220.webp',
   'W240': 'https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?w=400&h=400&fit=crop',
   'W320': 'https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=400&h=400&fit=crop',
   'W400': 'https://images.unsplash.com/photo-1563292769-4e05b684851a?w=400&h=400&fit=crop',

@@ -55,13 +55,13 @@ const ProductCard = ({ product }) => {
           loading="lazy"
         />
         {/* Category badge */}
-        <div className="absolute top-3 left-3">
+        <div className="absolute bottom-3 left-3">
           <span className={`badge ${getCategoryColor()}`}>
             {product.category}
           </span>
         </div>
         {/* Price tag */}
-        <div className="absolute top-3 right-3">
+        <div className="absolute bottom-3 right-3">
           <span className="bg-white/90 backdrop-blur-sm text-bark font-outfit font-bold px-2.5 py-1 rounded-lg text-sm shadow-sm">
             {formatCurrency(product.price)}/kg
           </span>
