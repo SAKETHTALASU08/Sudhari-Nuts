@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-inter text-charcoal bg-cream;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-outfit font-bold tracking-tight;
+  }
+
+  ::selection {
+    background-color: rgba(139, 46, 27, 0.2);
+    @apply text-rustic;
+  }
+}
+
+@layer components {
+  /* Glass / Card Styles */
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-glass;
+  }
+
+  .glass-dark {
+    @apply bg-charcoal/85 backdrop-blur-xl border border-charcoal/20 shadow-glass;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/30 shadow-glass rounded-2xl;
+  }
+
+  /* Primary button — Deep Reddish-Brown (rustic) from the image */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-rustic text-white font-outfit font-semibold 
+           rounded-xl shadow-rustic
+           hover:bg-rustic/90 hover:shadow-lg hover:scale-[1.02] 
+           active:scale-[0.98] 
+           transition-all duration-300 ease-out;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 
+           bg-white text-bark font-outfit font-semibold 
+           border-2 border-sand rounded-xl
+           hover:bg-sand/30 hover:border-jute 
+           active:scale-[0.98]
+           transition-all duration-300 ease-out;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 
+           bg-[#25D366] text-white font-outfit font-semibold 
+           rounded-xl shadow-lg
+           hover:bg-[#20bd5a] hover:shadow-xl hover:scale-[1.02] 
+           active:scale-[0.98]
+           transition-all duration-300 ease-out;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 
+           bg-white border-2 border-sand 
+           rounded-xl text-charcoal font-inter
+           placeholder:text-charcoal/40
+           focus:border-rustic/50 focus:ring-4 focus:ring-rustic/10 
+           focus:outline-none
+           transition-all duration-300;
+  }
+
+  .card-premium {
+    @apply bg-white rounded-2xl shadow-glass 
+           border border-sand/60
+           hover:shadow-glass-lg hover:border-jute/40
+           transition-all duration-500 ease-out;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 
+           text-xs font-semibold rounded-full;
+  }
+
+  .badge-success {
+    @apply badge bg-moss/10 text-moss;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-700;
+  }
+
+  .badge-danger {
+    @apply badge bg-chili/10 text-chili;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+
+  .container-app {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-gradient-rustic {
+    @apply bg-clip-text text-transparent bg-rustic-gradient;
+  }
+
+  .text-gradient-bark {
+    @apply bg-clip-text text-transparent bg-bark-gradient;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #C4A882 transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #C4A882;
+    border-radius: 20px;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Root layout */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Loading skeleton */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #E8D9C5 25%, #FAF5EF 50%, #E8D9C5 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 0.5rem;
+}
